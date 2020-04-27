@@ -125,3 +125,4 @@ docker-compose down
 ### ※ 더 공부해야할 사항
 
 - SpringBoot profile도 관리하도록 하여, 로컬/개발/운영시 서로 다른 yml파일을 읽어들일 수 있도록 처리 필요.
+- 컨테이너 이미지를 mvn(or gradle) package할때, DB와 관련된 jUnit Test는 어떻게 할것인가?
