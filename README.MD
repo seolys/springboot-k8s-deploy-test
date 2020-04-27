@@ -23,6 +23,9 @@ GCP에서 Kubernetes클러스터를 구성 후 배포 및 기능동작까지 흘
 - [5. 쿠버네티스 Nginx, SpringBoot 세팅](./guide/guide05.md)
 - [6. 쿠버네티스 Ingress 세팅](./guide/guide06.md)
 
+※ 컨테이너 yaml파일 경로 https://github.com/seolys/springboot-k8s-deploy-test/tree/master/yaml
+
+
 ## 참고자료
 
 - [도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문](https://wikibook.co.kr/docker-kubernetes/)
