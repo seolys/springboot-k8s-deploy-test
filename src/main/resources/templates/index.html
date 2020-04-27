@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>쿠버네티스 배포 테스트</title>
+    <style>
+    th, td {
+        border: 1px solid black;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("button#submit").click(function(){
+            console.log("submit click");
+            var data = {
+                title : $("input#title").val(),
+                contents : $("input#contents").val()
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/posts',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('글이 등록되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th></th>
+        </tr>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.id}"></td>
+            <td th:text="${post.title}"></td>
+            <td th:text="${post.contents}"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="text" id="title" value="타이틀11"/>
+            </td>
+            <td>
+                <input type="text" id="contents" value="내용11"/>
+            </td>
+            <td>
+                <button id="submit">등록</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
