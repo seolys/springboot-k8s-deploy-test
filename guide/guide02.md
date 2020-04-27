@@ -58,16 +58,16 @@ default-character-set=utf8mb4
 ## 2.2 도커 이미지 생성 및 실행
 
 ```
-# Dockerfile 생성경로 이동
+# 1. Dockerfile 생성경로 이동
 cd [경로]
 
-# Dockerfile을 바탕으로 이미지 생성
+# 2. Dockerfile을 바탕으로 이미지 생성
 docker image build -t [도커ID]/mysql:[태그] .
 
-# 이미지를 DockerHub에 push
+# 3. 이미지를 DockerHub에 push
 docker image push [도커ID]/mysql:[태그]
 
-# 생성된 MySQL 이미지로 컨테이너 실행.(컴포즈)
+# 4. 생성된 MySQL 이미지로 컨테이너 실행.(컴포즈)
 docker-compose up
 
 
@@ -77,7 +77,7 @@ docker-compose up -d
 ※ 컨테이너 종료(컴포즈)
 docker-compose down
 
-※ 컴포즈 컨테이너 접속
+※ 컴포즈 컨테이너 접속방법
 docker-compose run [서비스명] bash
 docker-compose run mysql bash
 ```
