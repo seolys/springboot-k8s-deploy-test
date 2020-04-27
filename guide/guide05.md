@@ -76,3 +76,11 @@ spec:
 ```
 k apply -f backend.yml
 ```
+
+### ※ 더 공부해야할 사항
+
+- Deployment.yaml파일 RollingUpdate시 HealthCheck(새 jar적용할때 Pod는 running이지만 SpringBoot는 기동중일 수 있음)
+    - keyword : livenessProbe, readinessProbe
+- 요청 처리중일때, 응답을 완료한 후 Pod가 중지되도록 설정
+    - Pod keyword : terminationGracePeriodSeconds
+    - Nginx keyword: lifecycle.preStop, /usr/sbin/nginx -s quit
